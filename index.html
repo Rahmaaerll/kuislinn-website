@@ -1,0 +1,191 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>LINGNYA MESOKIYAH</title>
+  <link href="https://fonts.googleapis.com/css2?family=Baloo+2:wght@600&display=swap" rel="stylesheet">
+  <style>
+    /* Styling dasar */
+    body {
+      font-family: 'Baloo 2', sans-serif;
+      background: linear-gradient(135deg, #3498db, #8e44ad);
+      color: #fff;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      height: 100vh;
+      margin: 0;
+      overflow: hidden;
+    }
+    .container {
+      text-align: center;
+      background-color: rgba(255, 255, 255, 0.8);
+      color: #333;
+      padding: 40px;
+      border-radius: 15px;
+      box-shadow: 0 10px 30px rgba(0, 0, 0, 0.2);
+      width: 60%;
+    }
+    .hidden {
+      display: none;
+    }
+    button, input[type="text"] {
+      padding: 10px 20px;
+      font-size: 1rem;
+      margin: 10px 0;
+      border-radius: 10px;
+      border: none;
+      cursor: pointer;
+      font-family: 'Baloo 2', sans-serif;
+    }
+    button {
+      background-color: #0984e3;
+      color: white;
+    }
+    input[type="text"] {
+      width: 80%;
+      border: 2px solid #0984e3;
+    }
+    button:hover {
+      background-color: #74b9ff;
+    }
+  </style>
+</head>
+<body>
+  <!-- Container utama -->
+  <div class="container">
+    <!-- Step awal -->
+    <div id="initial">
+      <h2>SELAMAT DATANG DI KAWASAN MESOKIYAH!! KAMU WARGA MESOKIYAH BOKAN?!?</h2>
+      <button onclick="handleYesNo('yes', 2)">YOYOYY</button>
+      <button onclick="handleYesNo('no', 2)">KYAHKK NOYNOY</button>
+    </div>
+
+    <!-- Step 2: Nama input -->
+    <div id="step2" class="hidden">
+      <h2>ISI NAMA DULU YEAHH KAKK:</h2>
+      <input type="text" id="nameInput" placeholder="EKHEM...." required>
+      <button onclick="handleDataInput(3)">pencet aku mas</button>
+    </div>
+
+    <!-- Step 3: Pertanyaan Yes/No -->
+    <div id="step3" class="hidden">
+      <h2>UDAH REDI YEAH KKQQ??!!</h2>
+      <button onclick="handleYesNo('yes', 4)">REDI BEGETEHH OMOHK</button>
+      <button onclick="handleYesNo('no', 3)">NOYNOY EGAK REDIH KKQ</button>
+    </div>
+
+    <!-- Step 4: Pertanyaan lain dengan Yes/No -->
+    <div id="step4" class="hidden">
+      <h2>NAMA PANJANG SI MINA MINOY SYAPA??</h2>
+      <button onclick="handleYesNoStep4('yes', 5)">MINAH BIN AL MESOKIYAH AHOY AHOY</button>
+      <button onclick="handleYesNoStep4('no', 4)">MINAH ETAK TAWH PPIYY NAMA MINAH TYAPAH</button>
+    </div>
+
+    <!-- Step 5: Pertanyaan dengan pop-up -->
+    <div id="step5" class="hidden">
+      <h2>NAMA SI MEKA SYAPA KAK??</h2>
+      <button onclick="handleYesNoStep5('yes', 6)">MEKA TUL BINTIYAH MESOKIYAH AHAK AHAK</button>
+      <button onclick="handleYesNoStep5('no', 5)">MEKA MELANI TOYIBAN</button>
+    </div>
+
+    <!-- Step 6: Pertanyaan dengan pop-up -->
+    <div id="step6" class="hidden">
+      <h2>WARNAH BAJU YANG SERENG DIPAKE MINA MEKA??</h2>
+      <button onclick="handleYesNoStep6('yes', 7)">BIRUYH SAMA PINGH!!</button>
+      <button onclick="handleYesNoStep6('no', 6)">HEUMHH ANAQNYAH EGAK PERNAH BAJUWAN KKQQ</button>
+    </div>
+
+    <!-- Step 7: Pertanyaan dengan pop-up -->
+    <div id="step7" class="hidden">
+      <h2>PERMEN KESOKAAN MINAH MEKAH?!?!?</h2>
+      <button onclick="handleYesNoStep7('yes', 8)">PERMEN SIKEL SEGEDE SIKEL PPIYNYAH</button>
+      <button onclick="handleYesNoStep7('no', 7)">PERMEN YANG ADA PENTONGAN</button>
+    </div>
+
+    <!-- Step 8: IGEH DEDE -->
+    <div id="step8" class="hidden">
+      <h2>UDAH DEH SEKARANG IGEH DEDE GEMECH KU</h2>
+      <input type="text" id="ageInput" placeholder="OMOHKK SINIH KAKK.." required>
+      <button onclick="handleDataInput(9)">Next</button>
+    </div>
+
+    <!-- Step final -->
+    <div id="final" class="hidden">
+      <h2 id="surprise">EKHEMM PIWWIDD!!🎉 KIW KIWHH PPPIYY KYAHKK~~~</h2>
+    </div>
+  </div>
+
+  <!-- JavaScript untuk handle interaksi -->
+  <script>
+    function handleYesNo(response, nextStep) {
+      if (response === 'yes') {
+        alert('HELOWWHH PPIYY UNCHH!!');
+        showStep(nextStep); // Lanjut ke langkah berikutnya
+      } else {
+        alert('PILEH YANG SBELAH ELLHH.');
+      }
+    }
+
+    function handleYesNoStep4(response, nextStep) {
+      if (response === 'yes') {
+        alert('YEAYYH PPIY BENELL');
+        showStep(nextStep); // Lanjut ke langkah berikutnya
+      } else {
+        alert('HEUHHH PPIY CALAHH.');
+      }
+    }
+
+    function handleYesNoStep5(response, nextStep) {
+      if (response === 'yes') {
+        alert('OMOHKK PPIYY BENEL LAGIHH MMIYY');
+        showStep(nextStep); // Lanjut ke langkah berikutnya
+      } else {
+        alert('CALAH AGY ATU NAMBEKH.');
+      }
+    }
+
+    function handleYesNoStep6(response, nextStep) {
+      if (response === 'yes') {
+        alert('PPIYY BENEL TEYUSS HUREYY');
+        showStep(nextStep); // Lanjut ke langkah berikutnya
+      } else {
+        alert('HEUHHH CALAHH LAGI.');
+      }
+    }
+
+    function handleYesNoStep7(response, nextStep) {
+      if (response === 'yes') {
+        alert('PPIYY HAYBADHH');
+        showStep(8); // Lanjut ke langkah 8
+      } else {
+        alert('MBOH PPIYY SALAH TEROS PPIYY.');
+      }
+    }
+
+    function handleDataInput(nextStep) {
+      if (nextStep === 9) {
+        const ageInput = document.getElementById('ageInput').value;
+        if (!ageInput) {
+          alert('kan kann susah betoll suroh ngisi!');
+          return;
+        }
+        document.getElementById('final').classList.remove('hidden'); // Tampilkan halaman final
+      } else if (nextStep === 3) {
+        const nameInput = document.getElementById('nameInput').value;
+        if (!nameInput) {
+          alert('isi dulu kkqq!');
+          return;
+        }
+      }
+      showStep(nextStep);
+    }
+
+    function showStep(step) {
+      document.querySelectorAll('.container > div').forEach(div => div.classList.add('hidden'));
+      document.getElementById('step' + step).classList.remove('hidden');
+    }
+  </script>
+</body>
+</html>
